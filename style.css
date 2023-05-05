@@ -62,7 +62,7 @@ main {
     gap: 0.3rem;
 }
 
-.sectionsButtonsContant{
+.sectionButtonsContainer > button{
 
     height: 3.5rem;
     width: 100%;
@@ -83,6 +83,12 @@ main {
 }
 
 .sectionsButtonsContant:hover {
+
+    background-color: white;
+    color: #79e479;;
+}
+
+.sectionsAdditionalButtonsContant:hover{
 
     background-color: white;
     color: #79e479;;
