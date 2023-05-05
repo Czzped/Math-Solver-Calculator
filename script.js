@@ -1,4 +1,5 @@
 const inputArea = document.getElementById('numbersInputContant')
+const copyButton = document.getElementById('copyButton')
 const clearButton = document.getElementById('clearButton')
 const calculateButton = document.getElementById('calculateButton')
 const allowedKeys = ['1', '2','3', '4', '5', '6', '7', '8', '9', '0', '.', '+', '-', '/', '*']
@@ -18,6 +19,11 @@ inputArea.addEventListener('keydown', function (ev) {
 
         calculate()
     }
+})
+
+copyButton.addEventListener('click', function (ev) {
+
+    navigator.clipboard.writeText(inputArea.value)
 })
 
 calculateButton.addEventListener('click', calculate)

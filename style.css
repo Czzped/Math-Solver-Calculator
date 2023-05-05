@@ -36,9 +36,12 @@ main {
     gap: 1rem;
 }
 
-.calculatorInputContant{
+.resultArea {
 
-    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    height: 3.8rem;
     width: 30rem;
 
     outline: none;
@@ -52,7 +55,47 @@ main {
     border-radius: 0.5rem;
 }
 
-.sectionButtonsContainer{
+
+.resultAreaContant {
+
+    width: 100%;
+
+    outline: none;
+
+    color: #fff;
+    font-size: x-large;
+
+
+    border: none;
+    border-right: 0.3rem solid #fff;
+    background-color: transparent;
+}
+
+.copyButton {
+
+
+    width: 10rem;
+
+    outline: none;
+
+    color: #fff;
+    font-size: x-large;
+
+    transition: 0.2s;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.copyButton:hover{
+
+    background-color: white;
+    color: #79e479;;
+}
+
+.sectionButtonsContainer {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -62,7 +105,7 @@ main {
     gap: 0.3rem;
 }
 
-.sectionButtonsContainer > button{
+.sectionButtonsContainer > button {
 
     height: 3.5rem;
     width: 100%;
@@ -88,7 +131,7 @@ main {
     color: #79e479;;
 }
 
-.sectionsAdditionalButtonsContant:hover{
+.sectionsAdditionalButtonsContant:hover {
 
     background-color: white;
     color: #79e479;;
