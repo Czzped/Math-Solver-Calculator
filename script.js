@@ -17,12 +17,14 @@ document.querySelectorAll('.sectionsButtonsContant').forEach(function (ev) {
 inputArea.addEventListener('keydown', function (ev) {
 
     ev.preventDefault()
+    
     if(allowedKeys.includes(ev.key)){
 
         inputArea.value += ev.key 
     }
     if(ev.key === 'Backspace'){
 
+        inputArea.style.backgroundColor = getComputedStyle(root).getPropertyValue('---bg-color')
         inputArea.value = inputArea.value.slice(0, -1)
     }
     if(ev.key === 'Enter'){
@@ -38,17 +40,34 @@ changeThemeButton.addEventListener('click', function () {
         changeThemeButton.value = 'Black Theme'
         root.style.setProperty('---bg-color', '#000000')
         root.style.setProperty('---color', '#fff')
+        inputArea.style.backgroundColor = getComputedStyle(root).getPropertyValue('---bg-color')
 
+        if(inputArea.value == 'ERRO'){
+
+            inputArea.value = ''
+        }
     }else if(changeThemeButton.value == 'Black Theme'){
 
         changeThemeButton.value = 'White Theme'
         root.style.setProperty('---bg-color', '#fff')
         root.style.setProperty('---color', '#000000')
+        inputArea.style.backgroundColor = getComputedStyle(root).getPropertyValue('---bg-color')
+
+        if(inputArea.value == 'ERRO'){
+
+            inputArea.value = ''
+        }
     }else if(changeThemeButton.value == 'White Theme'){
 
         changeThemeButton.value = 'Green Theme'
         root.style.setProperty('---bg-color', '#79e479')
         root.style.setProperty('---color', '#fff')
+        inputArea.style.backgroundColor = getComputedStyle(root).getPropertyValue('---bg-color')
+
+        if(inputArea.value == 'ERRO'){
+
+            inputArea.value = ''
+        }
     }
 })
 
@@ -61,13 +80,17 @@ calculateButton.addEventListener('click', calculate)
 
 clearButton.addEventListener('click', function allowedKeysFunction() {
 
+    inputArea.style.backgroundColor = getComputedStyle(root).getPropertyValue('---bg-color')
     inputArea.value = null
 })
 
 function calculate() {
 
-    const result = eval(inputArea.value)
-    inputArea.value = result
+    const currentValue = inputArea.value
+    inputArea.style.backgroundColor = '#eb3b3b'
+    inputArea.value = 'ERRO'
+    inputArea.value = eval(currentValue)
+    inputArea.style.backgroundColor = getComputedStyle(root).getPropertyValue('---bg-color')
 }
 
 

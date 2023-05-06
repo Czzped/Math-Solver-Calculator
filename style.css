@@ -83,9 +83,10 @@ main {
 
     outline: none;
 
+    transition: 0.5s;
+
     color: var(---color);
     font-size: x-large;
-
 
     border: 0.2rem solid var(---color);
     background-color: transparent;
@@ -102,6 +103,7 @@ main {
     color: var(---color);
     font-size: x-large;
 
+    transition: 0.5s;
 
     border: none;
     border-right: 0.3rem solid var(---color);
